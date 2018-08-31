@@ -1,8 +1,20 @@
 /* let name = 'Esvereidy';
 console.log(`Hola ${name}`); */
+/* El módulo 'path' proporciona utilidades para trabajar con rutas de archivos y directorios. */
 const path = require('path'); 
-
 const fs = require('fs');
+
+const checkUrl = (readUrl) => {
+    console.log(readUrl);
+    if(path.isAbsolute(readUrl) != true){
+       console.log(readUrl); 
+    } {
+    let reading = path.resolve(readUrl);
+    console.log(reading);
+    
+    } 
+};
+checkUrl('./README.md'); 
 
 const readFile = (callback) => {
     fs.readFile('README.md', 'utf8',(err, data) =>{
@@ -13,7 +25,7 @@ const readFile = (callback) => {
             console.log(data);
         }
     })
-} 
+}; 
 readFile(data => {
     console.log(data);
 }); 
@@ -35,7 +47,6 @@ function countLines(cb) {
  
 function logMyResult() {
   console.log(result)
-}
- 
+} 
 countLines(logMyResult) */
  
