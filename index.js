@@ -1,14 +1,18 @@
 /* let name = 'Esvereidy';
 console.log(`Hola ${name}`); */
+const path = require('path'); 
 
 const fs = require('fs');
 
-readFile = (callback) => {
-    fs.readFile('./README.md', 'uttf8',(err, data =>{
+const readFile = (callback) => {
+    fs.readFile('README.md', 'utf8',(err, data) =>{
         if (err){
-            callback(data)
+            callback(data);
         }
-    }))
+        else{
+            console.log(data);
+        }
+    })
 } 
 readFile(data => {
     console.log(data);
