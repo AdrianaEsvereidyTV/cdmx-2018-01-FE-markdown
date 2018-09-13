@@ -1,12 +1,9 @@
-# Markdown Links
+# Markdown Links 
 
-## Preámbulo
 
 [Markdown](https://es.wikipedia.org/wiki/Markdown) es un lenguaje de marcado
 ligero muy popular entre developers. Es usado en muchísimas plataformas que
-manejan texto plano (GitHub, foros, blogs, ...), y es muy común
-encontrar varios archivos en ese formato en cualquier tipo de repositorio
-(empezando por el tradicional `README.md`).
+manejan texto plano (GitHub, foros, blogs, ...).
 
 Estos archivos `Markdown` normalmente contienen _links_ (vínculos/ligas) que
 muchas veces están rotos o ya no son válidos y eso perjudica mucho el valor de
@@ -18,6 +15,22 @@ en formato `Markdown`, para verificar los links que contengan y reportar
 algunas estadísticas.
 
 ![md-links](https://user-images.githubusercontent.com/110297/42118443-b7a5f1f0-7bc8-11e8-96ad-9cc5593715a6.jpg)
+
+## Librería findBrokenFile
+
+Se pretende que está librería encuentre y lea los archivos con treminación .md y de los mismos encuentre links o enlaces web que se puedan clasificar o separar en un status que muestre si se han roto o siguen funcionales.
+
+Se podrá obtener la ruta absoluta dentro del sistema sin importar que de inicio la detecte como relativa se convertirá a absoluta.
+
+### Caracteristicas
+
+- Detectar y leer enlaces de un archivo md
+- Información del enlace: link, linea, texto, estado
+- Opción de validar los enlaces individuales y en carpetas
+- Opción de estadísticas de enlaces en los archivos y carpetas (que estén rotos o funcionales)
+- Se podrá recorrer carpetas recursivamente
+- Se podrá importar como un modulo
+- Se puede usar por medio de la terminal
 
 ## Introducción
 
@@ -239,16 +252,6 @@ Unique: 3
 Broken: 1
 ```
 
-## Entregables
-
-Módulo instalable directamente desde el repositorio de Github via `npm install <github-user>/md-links`. Este módulo debe
-incluir tanto un ejecutable como una interfaz que podamos importar con `require`
-para usarlo programáticamente.
-
-## Hacker edition
-
-- Puedes agregar más estadísticas.
-- Integración continua con Travis o Circle CI.
 
 ## Pistas / Tips / Recursos
 
@@ -324,73 +327,4 @@ si tienes dudas existenciales con respecto a estas decisiones. No existe una
 - [¿Qué es Nodejs? Javascript en el Servidor - Fazt en YouTube](https://www.youtube.com/watch?v=WgSc1nv_4Gw)
 - [¿Simplemente qué es Node.js? - IBM Developer Works, 2011](https://www.ibm.com/developerworks/ssa/opensource/library/os-nodejs/index.html)
 
-## Evaluación
 
-### Tech
-
-| Habilidad              | Nivel esperado |
-| ---------------------- | -------------- |
-| **JavaScript**         |                |
-| Estilo                 | 4              |
-| Nomenclatura/semántica | 3              |
-| Funciones/modularidad  | 3              |
-| Estructuras de datos   | 2              |
-| Tests                  | 4              |  |
-| **SCM**                |                |
-| Git                    | 3              |
-| GitHub                 | 3              |
-| **CS**                 |                |
-| Lógica                 | 3              |
-| Arquitectura           | 3              |
-| Patrones/paradigmas    | n/a            |
-
-### Habilidades Blandas
-
-Para este proyecto esperamos que ya hayas alcanzado el nivel 4 en todas tus
-habilidades blandas. Te aconsejamos revisar la rúbrica:
-
-| Habilidad                                                  | Nivel esperado |
-| ---------------------------------------------------------- | -------------- |
-| Planificación y organización                               | 4              |
-| Autoaprendizaje                                            | 4              |
-| Solución de Problemas                                      | 4              |
-| Dar y recibir feedback                                     | 4              |
-| Adaptabilidad                                              | 4              |
-| Trabajo en equipo (trabajo colaborativo y responsabilidad) | 4              |
-| Comunicación eficaz                                        | 4              |
-| Presentaciones                                             | 4              |
-
-## Checklist
-
-### General
-
-Que sea instalable directamente desde el repositorio de Github
-
-- [ ] `npm install --global <github-user>/md-links`
-
-### `README.md`
-
-- [ ] Un board con el backlog para la implementación de la librería.
-- [ ] Documentación técnica de la librería.
-- [ ] Guía de uso e instalación de la librería
-
-### API `mdLinks(path, opts)`
-
-- [ ] El módulo exporta una función con la interfaz (API) esperada.
-- [ ] Implementa soporte para archivo individual
-- [ ] Implementa soporte para directorios
-- [ ] Implementa `options.validate`
-
-### CLI
-
-- [ ] Expone ejecutable `md-links` en el path (configurado en `package.json`)
-- [ ] Se ejecuta sin errores / output esperado
-- [ ] Implementa `--validate`
-- [ ] Implementa `--stats`
-- [ ] Implementa `--validate --stats`
-
-### Pruebas / tests
-
-- [ ] Pruebas unitarias cubren un mínimo del 70% de statements, functions,
-      lines, y branches.
-- [ ] Pasa tests (y linters) (`npm test`).
